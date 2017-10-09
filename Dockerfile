@@ -15,6 +15,7 @@ RUN curl "https://caddyserver.com/download/linux/amd64?license=personal" \
 # -----------------------------------------------------------------------------
 
 FROM alpine:3.6
+LABEL maintainer="mail@michaelcontento.de"
 
 # copy caddy
 COPY --from=caddy /usr/bin/caddy /usr/bin/caddy

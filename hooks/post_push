@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+for tag in debug laravel laravel-debug; do
+    echo "====================================================================="
+    echo "== Building: ${tag}"
+    echo "====================================================================="
+
+    cd _${tag}
+    docker build -t ${DOCKER_REPO}:${tag} .
+    cd ..
+done
+
+for tag in debug laravel laravel-debug; do
+    echo "====================================================================="
+    echo "== Pushing: ${tag}"
+    echo "====================================================================="
+
+    docker push ${DOCKER_REPO}:${tag}
+done
