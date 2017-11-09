@@ -34,16 +34,16 @@ build-7.1:
 	docker tag michaelcontento/php:7.1-laravel-debug michaelcontento/php:7-laravel-debug
 	docker tag michaelcontento/php:7.1-laravel-debug michaelcontento/php:laravel-debug
 
-push: push-7.0 push 7.1
+push: push-7.0 push-7.1
 
-push-7.0:
+push-7.0: build-7.0
 	echo "Pushing: 7.0"
 	docker push michaelcontento/php:7.0
 	docker push michaelcontento/php:7.0-debug
 	docker push michaelcontento/php:7.0-laravel
 	docker push michaelcontento/php:7.0-laravel-debug
 
-push-7.1:
+push-7.1: build-7.1
 	echo "Pushing: 7.1"
 	docker push michaelcontento/php:7.1
 	docker push michaelcontento/php:7.1-debug
