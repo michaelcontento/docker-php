@@ -39,9 +39,9 @@ push: push-7.0 push 7.1
 push-7.0:
 	echo "Pushing: 7.0"
 	docker push michaelcontento/php:7.0
-	docker push michaelcontento/php:7.0-debug 7.0-debug
-	docker push michaelcontento/php:7.0-laravel 7.0-laravel
-	docker push michaelcontento/php:7.0-laravel-debug 7.0-laravel-debug
+	docker push michaelcontento/php:7.0-debug
+	docker push michaelcontento/php:7.0-laravel
+	docker push michaelcontento/php:7.0-laravel-debug
 
 push-7.1:
 	echo "Pushing: 7.1"
