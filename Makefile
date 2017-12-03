@@ -64,23 +64,23 @@ push-7.1: build-7.1
 	docker push michaelcontento/php:7.1-laravel-debug
 	
 push-7.2: build-7.2
-    echo "Pushing: 7.2"
-    docker push michaelcontento/php:7.2
-    docker push michaelcontento/php:7.2-debug
-    docker push michaelcontento/php:7.2-laravel
-    docker push michaelcontento/php:7.2-laravel-debug
+	echo "Pushing: 7.2"
+	docker push michaelcontento/php:7.2
+	docker push michaelcontento/php:7.2-debug
+	docker push michaelcontento/php:7.2-laravel
+	docker push michaelcontento/php:7.2-laravel-debug
 
-    echo "Pushing: 7.2 as 7"
-    docker push michaelcontento/php:7
-    docker push michaelcontento/php:7-debug
-    docker push michaelcontento/php:7-laravel
-    docker push michaelcontento/php:7-laravel-debug
+	echo "Pushing: 7.2 as 7"
+	docker push michaelcontento/php:7
+	docker push michaelcontento/php:7-debug
+	docker push michaelcontento/php:7-laravel
+	docker push michaelcontento/php:7-laravel-debug
 
-    echo "Pushing: 7.2 as latest"
-    docker push michaelcontento/php:debug
-    docker push michaelcontento/php:laravel
-    docker push michaelcontento/php:laravel-debug
-    docker push michaelcontento/php:latest
+	echo "Pushing: 7.2 as latest"
+	docker push michaelcontento/php:debug
+	docker push michaelcontento/php:laravel
+	docker push michaelcontento/php:laravel-debug
+	docker push michaelcontento/php:latest
 
 .SILENT:
 
