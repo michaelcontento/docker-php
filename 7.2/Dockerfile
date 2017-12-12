@@ -34,21 +34,21 @@ RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositorie
 
 # install php (cli + fpm)
 RUN apk add --no-cache \
-        php7@php \
-        php7-fpm@php \
-        php7-opcache@php \
+        'php7@php~7.2' \
+        'php7-fpm@php~7.2' \
+        'php7-opcache@php~7.2' \
     && ln -s /usr/bin/php7 /usr/bin/php \
     && php --version
 
 # install composer
 ADD https://getcomposer.org/installer /tmp/composer-setup.php
 RUN apk add --no-cache \
-        php7-curl@php \
-        php7-json@php \
-        php7-mbstring@php \
-        php7-openssl@php \
-        php7-phar@php \
-        php7-zlib@php \
+        'php7-curl@php~7.2' \
+        'php7-json@php~7.2' \
+        'php7-mbstring@php~7.2' \
+        'php7-openssl@php~7.2' \
+        'php7-phar@php~7.2' \
+        'php7-zlib@php~7.2' \
     && php /tmp/composer-setup.php -- --install-dir=/usr/bin --filename=composer \
     && rm -rf /tmp/composer-setup.php \
     && composer global require hirak/prestissimo \

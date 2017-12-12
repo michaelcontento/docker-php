@@ -30,20 +30,20 @@ EXPOSE 80
 
 # install php (cli + fpm)
 RUN apk add --no-cache \
-        php7 \
-        php7-fpm \
-        php7-opcache \
+        'php7~7.1' \
+        'php7-fpm~7.1' \
+        'php7-opcache~7.1' \
     && php --version
 
 # install composer
 ADD https://getcomposer.org/installer /tmp/composer-setup.php
 RUN apk add --no-cache \
-        php7-curl \
-        php7-json \
-        php7-mbstring \
-        php7-openssl \
-        php7-phar \
-        php7-zlib \
+        'php7-curl~7.1' \
+        'php7-json~7.1' \
+        'php7-mbstring~7.1' \
+        'php7-openssl~7.1' \
+        'php7-phar~7.1' \
+        'php7-zlib~7.1' \
     && php /tmp/composer-setup.php -- --install-dir=/usr/bin --filename=composer \
     && rm -rf /tmp/composer-setup.php \
     && composer global require hirak/prestissimo \
