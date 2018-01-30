@@ -29,7 +29,7 @@ COPY --from=caddy /usr/bin/caddy /usr/bin/
 EXPOSE 80
 
 ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
-RUN apk --update add ca-certificates
+RUN apk add --no-cache ca-certificates
 RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.2" >> /etc/apk/repositories
 
 # install php (cli + fpm)

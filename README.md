@@ -1,5 +1,8 @@
 # [michaelcontento/php][]
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/michaelcontento/php.svg)](https://hub.docker.com/r/michaelcontento/php/)
+[![Docker Automated build](https://img.shields.io/docker/automated/michaelcontento/php.svg)](https://hub.docker.com/r/michaelcontento/php/)
+
 Docker images for PHP with a focus on:
 - small footprint (based on alpine)
 - basic security (see [our default header setup][1])
