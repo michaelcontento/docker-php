@@ -28,22 +28,27 @@ LABEL maintainer="mail@michaelcontento.de"
 COPY --from=caddy /usr/bin/caddy /usr/bin/
 EXPOSE 80
 
+ADD https://php.codecasts.rocks/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
+RUN apk add --no-cache ca-certificates
+RUN echo "@php https://php.codecasts.rocks/v3.7/php-7.1" >> /etc/apk/repositories
+
 # install php (cli + fpm)
 RUN apk add --no-cache \
-        'php7~7.1' \
-        'php7-fpm~7.1' \
-        'php7-opcache~7.1' \
+        'php7@php~7.1' \
+        'php7-fpm@php~7.1' \
+        'php7-opcache@php~7.1' \
+    && ln -s /usr/bin/php7 /usr/bin/php \
     && php --version
 
 # install composer
 ADD https://getcomposer.org/installer /tmp/composer-setup.php
 RUN apk add --no-cache \
-        'php7-curl~7.1' \
-        'php7-json~7.1' \
-        'php7-mbstring~7.1' \
-        'php7-openssl~7.1' \
-        'php7-phar~7.1' \
-        'php7-zlib~7.1' \
+        'php7-curl@php~7.1' \
+        'php7-json@php~7.1' \
+        'php7-mbstring@php~7.1' \
+        'php7-openssl@php~7.1' \
+        'php7-phar@php~7.1' \
+        'php7-zlib@php~7.1' \
     && php /tmp/composer-setup.php -- --install-dir=/usr/bin --filename=composer \
     && rm -rf /tmp/composer-setup.php \
     && composer global require hirak/prestissimo \
